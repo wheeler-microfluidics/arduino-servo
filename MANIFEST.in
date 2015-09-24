@@ -2,6 +2,6 @@ include RELEASE-VERSION
 include version.py
 include setup.py
 include paver-minilib.zip
-recursive-include arduino_array *
-recursive-exclude arduino_array *.pyc
-recursive-exclude arduino_array *~
+recursive-include c_array_defs *
+recursive-exclude c_array_defs *.pyc
+recursive-exclude c_array_defs *~
