@@ -1,5 +1,5 @@
-#ifndef ___ARRAY__H___
-#define ___ARRAY__H___
+#ifndef ___C_ARRAY_DEFS__H___
+#define ___C_ARRAY_DEFS__H___
 
 #include <stdint.h>
 
@@ -55,4 +55,4 @@ public:
   float *data;
 };
 
-#endif  // #ifndef ___ARRAY__H___
+#endif  // #ifndef ___C_ARRAY_DEFS__H___

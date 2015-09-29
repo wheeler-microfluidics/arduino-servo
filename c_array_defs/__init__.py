@@ -22,4 +22,4 @@ def get_includes():
         ...
 
     """
-    return [os.path.join(os.path.dirname(c_array_defs.__file__), 'src')]
+    return [os.path.join(os.path.dirname(c_array_defs.__file__), 'Arduino', 'CArrayDefs')]
