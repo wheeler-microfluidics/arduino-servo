@@ -8,15 +8,15 @@ from distutils.dep_util import newer
 sys.path.insert(0, path('.').abspath())
 import version
 
-setup(name='c-array-defs',
+setup(name='arduino-library-template',
       version=version.getVersion(),
       description='Simple C classes for arrays of standard numeric types.',
       keywords='c++ array simple',
       author='Christian Fobel',
       author_email='christian@fobel.net',
-      url='https://github.com/wheeler-microfluidics/c-array-defs',
+      url='https://github.com/wheeler-microfluidics/arduino-library-template',
       license='GPL',
-      packages=['c_array_defs', ],
+      packages=['arduino_library_template', ],
       # Install data listed in `MANIFEST.in`
       include_package_data=True)
 
@@ -26,13 +26,13 @@ def build_arduino_library():
     import os
     import tarfile
 
-    arduino_lib_dir = path('c_array_defs').joinpath('lib')
+    arduino_lib_dir = path('arduino_library_template').joinpath('lib')
     if not arduino_lib_dir.isdir():
         arduino_lib_dir.mkdir()
     tf = tarfile.TarFile.bz2open(arduino_lib_dir
                                  .joinpath('C-Array-Defs.tar.gz'), 'w')
-    for s in path('c_array_defs').joinpath('Arduino', 'CArrayDefs').files():
-        tf.add(s, os.path.join('CArrayDefs', s.name))
+    for s in path('arduino_library_template').joinpath('Arduino', 'ArduinoLibraryTemplate').files():
+        tf.add(s, os.path.join('ArduinoLibraryTemplate', s.name))
     tf.close()
 
 
