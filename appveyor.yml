@@ -5,7 +5,7 @@ environment:
       MINICONDA: C:\Miniconda
       PYTHON_ARCH: "32"
 
-version: 'not set_4a4bc88b0aa1c81b3554e8d1a80530ef49e3189d
+version: 'not set_841685201019b6a80bbc61f468a1936665d8e63b
 _appveyor-{build}'
 
 init:
@@ -15,7 +15,7 @@ install:
   # Exit if no .conda-recipe folder
   - ps: if(!(Test-Path ".conda-recipe")){Add-AppveyorMessage -Message "No Conda Recipe Found" -Category "Error"; throw "Missing .conda-recipe folder"}
   - git clone --depth=1 https://github.com/sci-bots/sci-bots-configs.git
-  - .\sci-bots-configs\appveyor-install.bat
+  - powershell -executionpolicy remotesigned -File .\sci-bots-configs\appveyor-install.ps1
 
 # Handle build and tests using conda (defined in .conda-recipe/meta.yaml)
 build: false
